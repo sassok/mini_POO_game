@@ -35,11 +35,12 @@ while  user.life_points > 0 && (enemies1.life_points > 0 || enemies2.life_points
 	if enemies1.life_points > 0
 	print "0 - " 
 	print enemies1.show_state 
-end
+	end
 	if enemies2.life_points > 0
 	print "1 - "
 	print enemies2.show_state
-end
+	end
+
 	puts " "
 	print "> "
 	answer = gets.chomp.to_s
@@ -56,17 +57,23 @@ end
 		user.attacks(enemies2)
 	end
 
-	puts "Les autres joueurs t'attaquent !"
+	if enemies1.life_points > 0 || enemies2.life_points > 0
+		puts "Les autres joueurs t'attaquent !"
+	end
 
 	enemies.each do |atk|
 		if (atk.life_points > 0)
 			atk.attacks(user)
-		else 
-				enemies.delete(atk)
+		
 		end
 	end
-
-	
+end
+	if user.life_points > 0
+		puts ""
+		puts "BRAVO ! TU AS GAGNE !"
+	else
+		puts ""
+		puts "Loser ! Tu as perdu !"
 	end
 	end 
 
