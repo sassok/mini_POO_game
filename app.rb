@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-require_relative 'lib/game'
+
 require_relative 'lib/player'
 
 
@@ -15,6 +15,7 @@ def perform
 #boucle : tant que chaque joueur a encore des points de vie, ils continuent à se taper dessus (si l'un passe à 0 ou moins, on arrête le massacre)
 
 	while player1.life_points > 0 && player2.life_points > 0
+		system 'clear'
 
 #on affiche le niveau de vie de chaque joueur à chaque tour
 
