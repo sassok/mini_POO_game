@@ -34,7 +34,7 @@ class Player
 			damage_taken = compute_damage
 			puts "Il lui inflige #{damage_taken} points de dommages"
 		  player.gets_damage(damage_taken)
-
+		  gets.chomp
 		end
 
 #dé 6 de dommages
