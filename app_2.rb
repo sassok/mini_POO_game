@@ -4,6 +4,8 @@ Bundler.require
 #require_relative 'lib/game'
 require_relative 'lib/player'
 
+#perform et choix du nom du personnage
+
 	def perform
 		puts "  Bonjour, et bienvenue dans la V1 de notre jeu de baston interactif :"
 		puts ""
@@ -22,10 +24,14 @@ require_relative 'lib/player'
 		enemies2 = Player.new("José")
 		enemies.push(enemies1, enemies2) 
 
+#boucle while qui gère l'ensemble des interactions entre le joueur (User) et les PNJs (enemies 1 & 2)
+
 while  user.life_points > 0 && (enemies1.life_points > 0 || enemies2.life_points > 0)
 
 	puts "Voici l'état de #{user.name}: "
 	user.show_state
+
+#mise en place du menu
 
 	puts "Quelle action veux tu effectuer ?"
 	puts "a - chercher une meilleure arme"
@@ -61,6 +67,8 @@ while  user.life_points > 0 && (enemies1.life_points > 0 || enemies2.life_points
 		puts "Les autres joueurs t'attaquent !"
 	end
 
+#boucle d'attaque des ennemis
+
 	enemies.each do |atk|
 		if (atk.life_points > 0)
 			atk.attacks(user)
@@ -68,6 +76,9 @@ while  user.life_points > 0 && (enemies1.life_points > 0 || enemies2.life_points
 		end
 	end
 end
+
+#win or loose
+
 	if user.life_points > 0
 		puts ""
 		puts "BRAVO ! TU AS GAGNE !"
