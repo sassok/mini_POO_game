@@ -23,6 +23,7 @@ class Player
 				puts "Le joueur #{@name} a été tué !"
 			end
 			return @life_points
+			gets.chomp
 		end
 
 #fonction d'attaque
@@ -33,6 +34,12 @@ class Player
 			damage_taken = compute_damage
 			puts "Il lui inflige #{damage_taken} points de dommages"
 		 player.gets_damage(damage_taken)
+<<<<<<< HEAD
+=======
+		 gets.chomp
+		 
+
+>>>>>>> 4dd01852096c8f7421001b294d8b2da6f9d72d8f
 		end
 
 #dé 6 de dommages
@@ -86,6 +93,7 @@ class HumanPlayer < Player
 					@weapon_level = @weapon_level
 					puts "Tu gardes ton gourdin actuel..."
 				end
+				gets.chomp
 		end
 
 	#médi-pack du joueur : son niveau de vie augmentera en fonction du score d'un dé 6
@@ -106,6 +114,7 @@ class HumanPlayer < Player
 			if @life_points >= 100
 					@life_points = 100
 			end
+			gets.chomp
 		end
 
 

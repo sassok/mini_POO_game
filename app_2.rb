@@ -1,12 +1,12 @@
 require 'bundler'
 Bundler.require
 
-#require_relative 'lib/game'
 require_relative 'lib/player'
 
 #perform et choix du nom du personnage
 
 	def perform
+		system 'clear'
 		puts "  Bonjour, et bienvenue dans la V1 de notre jeu de baston interactif :"
 		puts ""
 		puts "‿︵‿︵(ಥ﹏ಥ)‿︵‿︵     ILS VEULENT TOUS MA POO !!    ‿︵‿︵(ಥ﹏ಥ)‿︵‿︵"
@@ -18,7 +18,7 @@ require_relative 'lib/player'
 		user = HumanPlayer.new("#{gets.chomp.to_s}")
 		puts " "
 		print "Bienvenue #{user.name} !"
-		puts " "
+		gets.chomp
 		enemies = []
 		enemies1 = Player.new("Josiane")
 		enemies2 = Player.new("José")
@@ -27,6 +27,7 @@ require_relative 'lib/player'
 #boucle while qui gère l'ensemble des interactions entre le joueur (User) et les PNJs (enemies 1 & 2)
 
 while  user.life_points > 0 && (enemies1.life_points > 0 || enemies2.life_points > 0)
+	system 'clear'
 
 	puts "Voici l'état de #{user.name}: "
 	user.show_state
