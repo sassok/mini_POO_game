@@ -47,9 +47,9 @@ class HumanPlayer < Player
   @@all_humans = Array.new
 
     def initialize (name)
+    	super(name)
 			@weapon_level = 1
 			@life_points = 100
-			super(name)
 			@@all_humans << self
 		end
 
