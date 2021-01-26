@@ -19,6 +19,7 @@ require_relative 'lib/player'
 		puts " "
 		print "Bienvenue #{user.name} !"
 		gets.chomp
+		#puts ""
 		enemies = []
 		enemies1 = Player.new("Josiane")
 		enemies2 = Player.new("José")

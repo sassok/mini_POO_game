@@ -33,13 +33,8 @@ class Player
 			puts "#{@name} mets un sale coup à #{player.name}"
 			damage_taken = compute_damage
 			puts "Il lui inflige #{damage_taken} points de dommages"
-		 player.gets_damage(damage_taken)
-<<<<<<< HEAD
-=======
-		 gets.chomp
-		 
+		  player.gets_damage(damage_taken)
 
->>>>>>> 4dd01852096c8f7421001b294d8b2da6f9d72d8f
 		end
 
 #dé 6 de dommages
