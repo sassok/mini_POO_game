@@ -5,20 +5,24 @@ require_relative 'lib/game'
 require_relative 'lib/player'
 
 
-
-#player1.show_state
-#binding.pry
-
 def perform
+
+#initialisation des joueurs
+
 	player1 = Player.new("Josiane")
 	player2 = Player.new("Josè")
-	
+
+#boucle : tant que chaque joueur a encore des points de vie, ils continuent à se taper dessus (si l'un passe à 0 ou moins, on arrête le massacre)
+
 	while player1.life_points > 0 && player2.life_points > 0
 
-	puts "Voici l'état de chaque joueurs: "
-	#puts " "
+#on affiche le niveau de vie de chaque joueur à chaque tour
+
+	puts "Voici l'état de chaque joueurs :"
 	puts "#{player1.show_state} #{player2.show_state}"
 		
+#phase d'attaque qui fait référence aux fonctions de "player.rb"
+
 		puts "Passons à la phase d'attaque :"
 		if !(player1.life_points <= 0)
 			player1.attacks(player2)
